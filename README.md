@@ -1,3 +1,3 @@
 # CompSci
-Coursework\n
+Coursework     
 I'll sort shit out here
