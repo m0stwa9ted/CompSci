@@ -1,0 +1,393 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+
+
+
+int main(){
+
+int p, i, t, r, z, c, v, zz, cc, vv, p1, p2;
+int k=0;
+int l=0;
+int pairp1 = 0;
+int pairp2 = 0;
+int p13oak = 0;
+int p23oak = 0;
+int p14oak = 0;
+int p24oak = 0;
+int p1flush = 0;
+int p2flush = 0;
+int p1fullhouse = 0;
+int p2fullhouse = 0;
+int straightp1 = 0;
+int straightp2 = 0;
+int deck[4][13] = {{1,2,3,4,5,6,7,8,9,10,11,12,13},{14,15,16,17,18,19,20,21,22,23,24,25,26},{27,28,29,30,31,32,33,34,35,36,37,38,39},{40,41,42,43,44,45,46,47,48,49,50,51,52}};
+int suitcheck[10];
+int suitcheckp1[5];
+int suitcheckp2[5];
+int numcheck[10];
+int numcheckp1[5];
+int numcheckp2[5];
+
+
+printf("\nFirst Player \t\t Second Player\n\n");
+
+    for(r=0;r<5;r++) {
+
+    for(t=1;t<3;t++){
+
+    REROLL:
+    p = (rand()%13);
+    i = (rand()%4);
+
+    if(deck[i][p]!=0){
+
+    if(p == 0){
+        printf("Ace");}
+
+    if(p == 1){
+        printf("2");}
+
+    if(p == 2){
+        printf("3");}
+
+    if(p == 3){
+        printf("4");}
+
+    if(p == 4){
+        printf("5");}
+
+    if(p == 5){
+        printf("6");}
+
+    if(p == 6){
+        printf("7");}
+
+    if(p == 7){
+        printf("8");}
+
+    if(p == 8){
+        printf("9");}
+
+    if(p == 9){
+        printf("10");}
+
+    if(p == 10){
+            printf("Jack");}
+
+    if(p ==11){
+            printf("Queen");}
+
+    if(p == 12){
+            printf("King");}
+
+    if(i == 0){
+            printf(" of hearts");}
+
+    if(i == 1){
+            printf(" of diamonds");}
+
+    if(i == 2){
+            printf(" of spades");}
+
+    if(i == 3){
+            printf(" of clubs");}
+
+    printf(" \t\t ");
+    deck[i][p]=0;
+    suitcheck[k]=i;
+    numcheck[l]=p;
+    k++;
+    l++;
+
+
+    }
+   else{
+   goto REROLL;
+    }
+    }
+    printf("\n");
+    }
+    suitcheckp1[0]=suitcheck[0];
+    suitcheckp1[1]=suitcheck[2];
+    suitcheckp1[2]=suitcheck[4];
+    suitcheckp1[3]=suitcheck[6];
+    suitcheckp1[4]=suitcheck[8];
+    suitcheckp2[0]=suitcheck[1];
+    suitcheckp2[1]=suitcheck[3];
+    suitcheckp2[2]=suitcheck[5];
+    suitcheckp2[3]=suitcheck[7];
+    suitcheckp2[4]=suitcheck[9];
+    numcheckp1[0]=numcheck[0];
+    numcheckp1[1]=numcheck[2];
+    numcheckp1[2]=numcheck[4];
+    numcheckp1[3]=numcheck[6];
+    numcheckp1[4]=numcheck[8];
+    numcheckp2[0]=numcheck[1];
+    numcheckp2[1]=numcheck[3];
+    numcheckp2[2]=numcheck[5];
+    numcheckp2[3]=numcheck[7];
+    numcheckp2[4]=numcheck[9];
+
+
+
+
+        if(numcheckp1[0]==numcheckp1[1]){
+        pairp1++;
+    }
+        if(numcheckp1[0]==numcheckp1[2]){
+        pairp1++;
+    }
+        if(numcheckp1[0]==numcheckp1[3]){
+        pairp1++;
+    }
+        if(numcheckp1[0]==numcheckp1[4]){
+        pairp1++;
+    }
+        if(numcheckp1[1]==numcheckp1[2]){
+        pairp1++;
+    }
+        if(numcheckp1[1]==numcheckp1[3]){
+        pairp1++;
+    }
+        if(numcheckp1[1]==numcheckp1[4]){
+        pairp1++;
+    }
+        if(numcheckp1[2]==numcheckp1[3]){
+        pairp1++;
+    }
+        if(numcheckp1[2]==numcheckp1[4]){
+        pairp1++;
+    }
+        if(numcheckp1[3]==numcheckp1[4]){
+        pairp1++;
+
+    }
+
+           if(numcheckp2[0]==numcheckp2[1]){
+        pairp2++;
+    }
+        if(numcheckp2[0]==numcheckp2[2]){
+        pairp2++;
+    }
+        if(numcheckp2[0]==numcheckp2[3]){
+        pairp2++;
+    }
+        if(numcheckp2[0]==numcheckp2[4]){
+        pairp2++;
+    }
+        if(numcheckp2[1]==numcheckp2[2]){
+        pairp2++;
+    }
+        if(numcheckp2[1]==numcheckp2[3]){
+        pairp2++;
+    }
+        if(numcheckp2[1]==numcheckp2[4]){
+        pairp2++;
+    }
+        if(numcheckp2[2]==numcheckp2[3]){
+        pairp2++;
+    }
+        if(numcheckp2[2]==numcheckp2[4]){
+        pairp2++;
+    }
+        if(numcheckp2[3]==numcheckp2[4]){
+        pairp2++;
+    }
+
+
+
+        if(suitcheckp1[0]==(suitcheckp1[1]==(suitcheckp1[2])==suitcheckp1[3])){
+                p1flush++;
+        }
+                if(suitcheckp2[0]==suitcheckp2[1]==suitcheckp2[2]==suitcheckp2[3]){
+                p2flush++;
+        }
+
+        if(p13oak == 1){
+            if(pairp1 == 4){
+                p1fullhouse++;
+            }
+        }
+
+        if(p23oak == 1){
+            if(pairp2 == 4){
+                p2fullhouse++;
+            }
+        }
+
+  for (z = 0 ; z < 4; z++)
+  {
+    for (c = 0 ; c < 4; c++)
+    {
+      if (numcheckp1[c] > numcheckp1[c+1])
+      {
+        v      = numcheckp1[c];
+        numcheckp1[c]   = numcheckp1[c+1];
+        numcheckp1[c+1] = v;
+      }
+    }
+  }
+
+
+    for (zz = 0 ; zz < 4; zz++)
+  {
+    for (cc = 0 ; cc < 4; cc++)
+    {
+      if (numcheckp2[cc] > numcheckp2[cc+1])
+      {
+        vv      = numcheckp2[cc];
+        numcheckp2[cc]   = numcheckp2[cc+1];
+        numcheckp2[cc+1] = vv;
+      }
+    }
+  }
+
+
+        if(pairp1>1){
+        if((numcheckp1[0]==numcheckp1[1])&&(numcheckp2[1]==numcheckp1[2])){
+            p13oak++;}
+        if((numcheckp1[1]==numcheckp1[2])&&(numcheckp2[2]==numcheckp1[3])){
+            p13oak++;}
+        if((numcheckp1[2]==numcheckp1[3])&&(numcheckp1[3]==numcheckp1[4])){
+            p13oak++;}
+}
+
+                if(pairp2>1){
+        if((numcheckp2[0]==numcheckp2[1])&&(numcheckp2[1]==numcheckp2[2])){
+            p13oak++;}
+        if((numcheckp2[1]==numcheckp2[2])&&(numcheckp2[2]==numcheckp2[3])){
+            p13oak++;}
+        if((numcheckp2[2]==numcheckp2[3])&&(numcheckp2[3]==numcheckp2[4])){
+            p13oak++;}
+}
+
+        if((numcheckp1[0]==numcheckp1[1])&&(numcheckp1[1]==numcheckp1[2])&&(numcheckp1[2]==numcheckp1[3])){
+            p14oak++;}
+        if((numcheckp1[1]==numcheckp1[2])&&(numcheckp1[2]==numcheckp1[3])&&(numcheckp1[3]==numcheckp1[4])){
+            p14oak++;}
+
+        if((numcheckp2[0]==numcheckp2[1])&&(numcheckp2[1]==numcheckp2[2])&&(numcheckp2[2]==numcheckp2[3])){
+            p24oak++;}
+        if((numcheckp2[1]==numcheckp2[2])&&(numcheckp2[2]==numcheckp2[3])&&(numcheckp2[3]==numcheckp2[4])){
+            p24oak++;}
+
+  if(numcheckp1[4]==((((numcheckp1[3]+1)==(numcheckp1[2]+2))==(numcheckp1[1]+3))==(numcheckp1[0]+3))){
+    straightp1++;
+  }
+  if(numcheckp2[4]==(numcheckp2[3]+1)==(numcheckp2[2]+2)==(numcheckp2[1]+3)==(numcheckp2[0]+3)){
+    straightp2++;
+  }
+
+      if(p1flush == 1){
+    printf("Player 1 has a flush");
+    p1 = 10;
+
+  }
+  if (p1flush == 0){
+    if (p14oak == 1){
+        printf("Player 1 has 4 of a kind");
+        p1 = 9;
+
+    }
+    if (p14oak == 0){
+        if (p1fullhouse == 1){
+            printf("Player 1 has a full house");
+            p1 = 8;
+
+        }
+        if (p1fullhouse == 0){
+            if (straightp1 == 1){
+                printf("player 1 has a straight");
+                p1 = 7;
+
+            }
+            if (straightp1 == 0){
+                if ((pairp1 == 2)&&(p13oak == 0)){
+                    printf("Player 1 has 2 pairs");
+                        p1 = 6;}
+                if (!((pairp1 == 2)&&(p13oak == 0))){
+                    if (p13oak == 1){
+                        printf("Player 1 has 3 of a kind");}
+                        p1 = 5;
+                    if (p13oak == 0){
+                        if (pairp1 == 1){
+                        printf("Player 1 has a pair");
+                        p1 = 4; }
+                        if (pairp1 == 0){
+                        printf("Player 1 has no combinations");
+                        p1 = 3;
+
+                }
+                }
+            }
+        }
+    }
+    }
+    }
+
+    printf("\n");
+
+          if(p2flush == 1){
+    printf("Player 2 has a flush");
+    p2 = 10;
+
+  }
+  if (p2flush == 0){
+    if (p24oak == 1){
+        printf("Player 2 has 4 of a kind");
+        p2 = 9;
+
+    }
+    if (p24oak == 0){
+        if (p2fullhouse == 1){
+            printf("Player 2 has a full house");
+            p2 = 8;
+
+        }
+        if (p2fullhouse == 0){
+            if (straightp2 == 1){
+                printf("player 2 has a straight");
+                p2 = 7;
+
+            }
+            if (straightp2 == 0){
+                if ((pairp2 == 2)&&(p23oak == 0)){
+                    printf("Player 2 has 2 pairs");
+                        p2 = 6;}
+                if (!((pairp2 == 2)&&(p23oak == 0))){
+                    if (p23oak == 1){
+                        printf("Player 2 has 3 of a kind");}
+                        p2 = 5;
+                    if (p23oak == 0){
+                        if (pairp2 == 1){
+                        printf("Player 2 has a pair");
+                        p2 = 4; }
+                        if (pairp2 == 0){
+                        printf("Player 2 has no combinations");
+                        p2 = 3;
+
+                }
+                }
+            }
+        }
+    }
+    }
+    }
+
+
+
+
+    printf("\n");
+    if(p2>p1){
+        printf("Player 2 wins");
+    }
+    if(p1>p2){
+        printf("Player 1 wins");
+    }
+    if(p1 == p2){
+        printf("it is a draw");
+    }
+
+    }
+
